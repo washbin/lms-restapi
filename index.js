@@ -2,7 +2,11 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 
-import { errorHandler, notFoundHandler } from "./api/middlewares/errorhandler";
+import {
+  errorHandler,
+  notFoundHandler,
+} from "./api/middlewares/errorhandler.js";
+import { ChapterRouter } from "./api/routes/ChapterRoutes.js";
 
 const PORT = parseInt(process.env.PORT) || 3000;
 const MONGO_CONNECION_URI =
@@ -31,6 +35,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use("/api/v1/chapters", ChapterRouter);
 
 app.use(errorHandler);
 app.use(notFoundHandler);
