@@ -9,11 +9,11 @@ import {
 import { ChapterRouter } from "./api/routes/ChapterRoutes.js";
 
 const PORT = parseInt(process.env.PORT) || 3000;
-const MONGO_CONNECION_URI =
-  process.env.MONGO_CONNECION_URI || "mongodb://localhost:27017/test";
+const MONGO_CONNECTION_URI =
+  process.env.MONGO_CONNECTION_URI || "mongodb://localhost:27017/test";
 
 mongoose
-  .connect(MONGO_CONNECION_URI, {
+  .connect(MONGO_CONNECTION_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
